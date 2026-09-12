@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AI Work Guide</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar"><div class="brand">AI WORK GUIDE</div><div class="view-switch"><button data-view="auto" class="active">자동</button><button data-view="desktop">PC 보기</button><button data-view="mobile">모바일 보기</button></div></header>
+<main class="shell">
+<section class="hero">
+<div><p class="eyebrow">VELYB INTERNAL GUIDE</p><h1>AI로 만드는 고효율 하루</h1><p class="hero-sub">정보 수집 · 학습 · 업무 도구 제작</p></div>
+<div class="day-card"><div class="day-title">VelyBee의 하루 <span aria-hidden="true">🐝</span></div><div class="day-flow"><span>08:30 뉴스</span><span>09:00 학습</span><span>14:00 반복업무</span><span>16:00 도구 제작</span><span>21:00 복습</span></div></div>
+</section>
+<section class="cards" aria-label="AI 활용 메뉴">
+<button class="feature-card" data-target="info"><strong data-key="card_info.title">맞춤형 정보 수집</strong><span data-key="card_info.desc">원하는 주제와 시간에 맞춰 정보를 받아보고 기록합니다.</span></button>
+<button class="feature-card"><strong data-key="card_tutor.title">개인화 학습 튜터</strong><span data-key="card_tutor.desc">관심 정보와 모르는 표현을 학습과 테스트로 연결합니다.</span><em>준비 중</em></button>
+<button class="feature-card"><strong data-key="card_tools.title">나만의 도구 제작</strong><span data-key="card_tools.desc">필요한 기능을 프로그램이나 대시보드로 구성합니다.</span><em>준비 중</em></button>
+</section>
+<section id="info" class="detail-panel">
+<div class="section-head"><div><p class="eyebrow">01</p><h2>맞춤형 정보 수집</h2></div><a class="sheet-link" href="https://docs.google.com/spreadsheets/d/1r-8QxKwWeaHF-pFTNsEYkxbG07dpuXC5DZa7HmN9swg/edit" target="_blank" rel="noreferrer">설명 문구 수정</a></div>
+<div class="steps">
+<article class="step"><div class="step-copy"><h3 data-key="step1.title">STEP 1 · 원하는 알림 예약하기</h3><p data-key="step1.desc">관심 주제, 시간, 형식을 설정합니다.</p></div><img src="assets/step1-redacted.jpg" alt="ChatGPT 예약 메뉴 화면"></article>
+<article class="step"><div class="step-copy"><h3 data-key="step2.title">STEP 2 · 알림 수신</h3><p data-key="step2.desc">설정한 시간에 예약한 내용이 전송됩니다.</p><div class="note"><b>프롬프트에 쓸 내용 = 요청사항</b><span>매일 오전 9시에 중국 의료미용·병원 운영, 중국 사업·규제·정책, AI·테크·업무자동화, 세계 경제 뉴스를 보내줘. 한국어 → 중국어 → 영어 순서로 정리하고, 업무에 활용할 수 있는 주요 표현도 함께 정리해줘.</span></div></div><img src="assets/step2-reservation.jpg" alt="예약 내용 입력 화면"></article>
+<article class="step"><div class="step-copy"><h3 data-key="step3.title">STEP 3 · 질문</h3><p data-key="step3.desc">읽으면서 모르는 단어나 궁금한 내용을 모아 질문합니다.</p><div class="note"><span data-key="step3.extra">메모 또는 복사·붙여넣기 후 한 번에 전송</span></div></div><div class="media-stack"><img src="assets/step3-news.jpg" alt="뉴스 브리핑 화면"><img src="assets/step3-question.jpg" alt="질문을 모아 입력한 화면"></div></article>
+<article class="step"><div class="step-copy"><h3 data-key="step4.title">STEP 4 · 자동으로 기록</h3><p data-key="step4.desc">필요한 내용을 Google Sheet에 누적합니다.</p></div><div class="sheet-mock"><div class="sheet-bar">뉴스 & 학습 기록</div><table><thead><tr><th>날짜</th><th>구분</th><th>제목/내용</th><th>학습표현</th></tr></thead><tbody><tr><td>9/12</td><td>경제</td><td>미국 CPI</td><td>25个基点</td></tr><tr><td>9/12</td><td>AI</td><td>Data agent</td><td>交互式仪表盘</td></tr><tr><td>9/12</td><td>영어</td><td>업무표현</td><td>integrated across</td></tr></tbody></table></div></article>
+<article class="step"><div class="step-copy"><h3 data-key="step5.title">STEP 5 · 옵션</h3><p data-key="step5.desc">원하면 대시보드에 연결해 웹앱처럼 확인합니다.</p></div><div class="device-mock"><div class="laptop"><div class="screen">Dashboard<br><small>뉴스 · 학습 · 기록</small></div></div><div class="phone">오늘의 뉴스<br><small>주요 이슈 5개</small></div></div></article>
+<article class="step"><div class="step-copy"><h3 data-key="step6.title">STEP 6 · 학습 연계</h3><p data-key="step6.desc">저장한 표현을 저녁 테스트와 연결합니다.</p></div><div class="quiz-mock"><b>오늘의 학습 테스트</b><p>1. CPI环比上涨0.4% 뜻은?</p><p>2. 25个基点의 의미는?</p><p>3. 交互式仪表盘 뜻은?</p><p>4. integrated across ~ 로 문장 만들기</p></div></article>
+</div>
+</section>
+</main>
+<script src="app.js"></script>
+</body></html>
