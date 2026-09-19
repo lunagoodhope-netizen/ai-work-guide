@@ -16,7 +16,7 @@ const INFO_SHEET_CSV='https://docs.google.com/spreadsheets/d/1K1wG_VkVaMbO7lWC9b
 async function loadInfoSheet(){try{const res=await fetch(INFO_SHEET_CSV+'&cb='+Date.now(),{cache:'no-store'});if(!res.ok)return;const rows=parseCSV(await res.text());const map=Object.fromEntries(rows.slice(1).filter(r=>r[0]).map(r=>[r[0],r[2]??'']));document.querySelectorAll('[data-info]').forEach(el=>{const v=map[el.dataset.info];if(v!==undefined&&v!=='')el.textContent=v})}catch(e){}}
 loadInfoSheet();
 const infoStepDetails={
-1:'<div class="step-popup-head"><span>STEP 1</span><h2>원하는 알림 예약하기</h2><p>관심 주제 · 시간 · 형식 · 언어 등 원하는 조건을 자연어로 요청합니다.</p></div><button class="step-real-image" data-popup-image="assets/step1-redacted.webp"><img src="assets/step1-redacted.webp" alt="실제 알림 예약 화면"></button><p class="popup-image-guide">이미지를 누르면 크게 볼 수 있습니다.</p>',
+1:'<div class="step-popup-head"><span>STEP 1</span><h2>원하는 알림 예약하기</h2><p>관심 주제 · 시간 · 형식 · 언어 등 원하는 조건을 자연어로 요청합니다.</p></div><div class="image-pair"><button class="step-real-image" data-popup-image="info-step1-reservation-01.png.PNG"><img src="info-step1-reservation-01.png.PNG" alt="예약 메뉴 실제 화면"></button><button class="step-real-image" data-popup-image="info-step1-reservation-02.png.PNG"><img src="info-step1-reservation-02.png.PNG" alt="알림 예약 입력 실제 화면"></button></div><p class="popup-image-guide">이미지를 누르면 크게 볼 수 있습니다.</p>',
 2:'<h2>STEP 2 · 알림 수신</h2><p>설정한 시간에 예약한 내용이 알림으로 도착합니다.</p>',
 3:'<h2>STEP 3 · 질문</h2><p>뉴스를 확인하면서 궁금한 내용을 바로 이어서 질문할 수 있습니다.</p>'
 };
