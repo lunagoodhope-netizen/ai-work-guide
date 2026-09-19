@@ -42,3 +42,8 @@
 .briefing-card{display:flex;flex-direction:column}
 .briefing-inner{flex:1}
 @media(max-width:900px){.info-showcase{grid-template-columns:1fr}.info-showcase .showcase-card{min-height:0!important}}
+
+/* prompt examples compact sizing fix */
+.prompt-card{height:100%!important}
+.prompt-examples{display:grid!important;grid-template-rows:repeat(3,auto)!important;gap:10px!important;align-content:start!important}
+.prompt-card .prompt-box{min-height:0!important;height:auto!important;padding:14px 16px!important;line-height:1.55!important;margin:0!important}
