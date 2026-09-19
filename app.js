@@ -7,15 +7,17 @@ const modal=document.querySelector('#image-modal');const modalImg=modal.querySel
 document.querySelectorAll('[data-image]').forEach(btn=>btn.addEventListener('click',()=>{modalImg.src=btn.dataset.image;modal.classList.add('open');modal.setAttribute('aria-hidden','false')}));
 function closeModal(){modal.classList.remove('open');modal.setAttribute('aria-hidden','true');modalImg.src=''}
 modal.querySelector('.modal-close').addEventListener('click',closeModal);modal.addEventListener('click',e=>{if(e.target===modal)closeModal()});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
-const COPY_SHEET_CSV='https://docs.google.com/spreadsheets/d/1K1wG_VkVaMbO7lWC9bCBtJWlnvOAt5pO1m-iMfgXY6Y/gviz/tq?tqx=out:csv&sheet=%EC%BD%98%ED%85%90%EC%B8%A0';
+const SHEET_ID='1K1wG_VkVaMbO7lWC9bCBtJWlnvOAt5pO1m-iMfgXY6Y';
+const sheetCsv=name=>'https://docs.google.com/spreadsheets/d/'+SHEET_ID+'/gviz/tq?tqx=out:csv&sheet='+encodeURIComponent(name);
+const COPY_SHEET_CSV=sheetCsv('콘텐츠');
 function parseCSV(text){const rows=[];let row=[],cell='',q=false;for(let i=0;i<text.length;i++){const ch=text[i],n=text[i+1];if(ch==='"'){if(q&&n==='"'){cell+='"';i++}else q=!q}else if(ch===','&&!q){row.push(cell);cell=''}else if((ch==='\n'||ch==='\r')&&!q){if(ch==='\r'&&n==='\n')i++;row.push(cell);rows.push(row);row=[];cell=''}else cell+=ch}if(cell||row.length){row.push(cell);rows.push(row)}return rows}
 async function loadHomepageCopy(){try{const res=await fetch(COPY_SHEET_CSV+'&cb='+Date.now(),{cache:'no-store'});if(!res.ok)return;const rows=parseCSV(await res.text());const map=Object.fromEntries(rows.slice(1).filter(r=>r[0]).map(r=>[r[0],r[2]??r[1]??'']));document.querySelectorAll('[data-copy]').forEach(el=>{const v=map[el.dataset.copy];if(v!==undefined&&v!==''){if(el.dataset.copy==='main_title')el.innerHTML=v.replace(/\n/g,'<br>');else if(el.dataset.copy==='hero_tag')el.innerHTML=v.replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>');else el.textContent=v}})}catch(e){}}
 loadHomepageCopy();
 
-const INFO_SHEET_CSV='https://docs.google.com/spreadsheets/d/1K1wG_VkVaMbO7lWC9bCBtJWlnvOAt5pO1m-iMfgXY6Y/gviz/tq?tqx=out:csv&sheet=%EC%A0%95%EB%B3%B4%EC%88%98%EC%A7%91';
+const INFO_SHEET_CSV=sheetCsv('정보수집');
 async function loadInfoSheet(){try{const res=await fetch(INFO_SHEET_CSV+'&cb='+Date.now(),{cache:'no-store'});if(!res.ok)return;const rows=parseCSV(await res.text());const map=Object.fromEntries(rows.slice(1).filter(r=>r[0]).map(r=>[r[0],r[2]??'']));document.querySelectorAll('[data-info]').forEach(el=>{const v=map[el.dataset.info];if(v!==undefined&&v!=='')el.textContent=v})}catch(e){}}
 loadInfoSheet();
-const POPUP_SHEET_CSV='https://docs.google.com/spreadsheets/d/1K1wG_VkVaMbO7lWC9bCBtJWlnvOAt5pO1m-iMfgXY6Y/gviz/tq?tqx=out:csv&sheet=%EC%A0%95%EB%B3%B4%EC%88%98%EC%A7%91_%ED%8C%9D%EC%97%85';
+const POPUP_SHEET_CSV=sheetCsv('정보수집_팝업');
 const popupDefaults={
 step1_title:'원하는 알림 예약하기',step1_desc:'관심 주제 · 시간 · 형식 · 언어 등 원하는 조건을 자연어로 요청합니다.',
 step2_title:'알림 수신',step2_desc:'설정한 시간에 예약한 내용이 알림으로 도착합니다.',
@@ -29,12 +31,12 @@ let popupCopy={...popupDefaults};
 async function loadPopupSheet(){try{const res=await fetch(POPUP_SHEET_CSV+'&cb='+Date.now(),{cache:'no-store'});if(!res.ok)return;const rows=parseCSV(await res.text());popupCopy={...popupDefaults,...Object.fromEntries(rows.slice(1).filter(r=>r[0]).map(r=>[r[0],r[2]??'']))}}catch(e){}}
 loadPopupSheet();
 const stepImages={
-1:['info-step1-reservation-01.png.PNG','info-step1-reservation-02.png.PNG'],
-2:['info-step1-reservation-03.png.jpg','info-step1-reservation-04.png.jpg'],
-3:['info-step1-reservation-08.png'],
-4:['info-step1-reservation-05.png'],
-5:['info-step1-reservation-06.png','info-step1-reservation-07.png'],
-6:['info-step1-reservation-09.png']
+1:['./info-step1-reservation-01.png.PNG','./info-step1-reservation-02.png.PNG'],
+2:['./info-step1-reservation-03.png.jpg','./info-step1-reservation-04.png.jpg'],
+3:['./info-step1-reservation-08.png'],
+4:['./info-step1-reservation-05.png'],
+5:['./info-step1-reservation-06.png','./info-step1-reservation-07.png'],
+6:['./info-step1-reservation-09.png']
 };
 function stepPopupHTML(step){
  const imgs=(stepImages[step]||[]).map((src,i)=>'<button class="step-real-image" data-popup-image="'+src+'"><img src="'+src+'" alt="STEP '+step+' 실제 화면 '+(i+1)+'"></button>').join('');
