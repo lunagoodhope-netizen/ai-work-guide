@@ -47,3 +47,8 @@
 .prompt-card{height:100%!important}
 .prompt-examples{display:grid!important;grid-template-rows:repeat(3,auto)!important;gap:10px!important;align-content:start!important}
 .prompt-card .prompt-box{min-height:0!important;height:auto!important;padding:14px 16px!important;line-height:1.55!important;margin:0!important}
+
+/* final prompt sizing override */
+.info-showcase .prompt-card{display:block!important;min-height:460px!important;height:100%!important}
+.info-showcase .prompt-card .prompt-examples{display:flex!important;flex-direction:column!important;gap:12px!important;height:auto!important;align-items:stretch!important}
+.info-showcase .prompt-card .prompt-examples .prompt-box{display:block!important;flex:0 0 auto!important;min-height:0!important;height:auto!important;max-height:none!important;padding:14px 16px!important;line-height:1.55!important}
