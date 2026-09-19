@@ -17,7 +17,7 @@ async function loadInfoSheet(){try{const res=await fetch(INFO_SHEET_CSV+'&cb='+D
 loadInfoSheet();
 const infoStepDetails={
 1:'<div class="step-popup-head"><span>STEP 1</span><h2>원하는 알림 예약하기</h2><p>관심 주제 · 시간 · 형식 · 언어 등 원하는 조건을 자연어로 요청합니다.</p></div><div class="image-pair"><button class="step-real-image" data-popup-image="info-step1-reservation-01.png.PNG"><img src="info-step1-reservation-01.png.PNG" alt="예약 메뉴 실제 화면"></button><button class="step-real-image" data-popup-image="info-step1-reservation-02.png.PNG"><img src="info-step1-reservation-02.png.PNG" alt="알림 예약 입력 실제 화면"></button></div><p class="popup-image-guide">이미지를 누르면 크게 볼 수 있습니다.</p>',
-2:'<h2>STEP 2 · 알림 수신</h2><p>설정한 시간에 예약한 내용이 알림으로 도착합니다.</p>',
+2:'<div class="step-popup-head"><span>STEP 2</span><h2>알림 수신</h2><p>설정한 시간에 예약한 내용이 알림으로 도착합니다.</p></div><div class="image-pair"><button class="step-real-image" data-popup-image="info-step1-reservation-03.png.jpg"><img src="info-step1-reservation-03.png.jpg" alt="알림 수신 실제 화면 1"></button><button class="step-real-image" data-popup-image="info-step1-reservation-04.png.jpg"><img src="info-step1-reservation-04.png.jpg" alt="알림 수신 실제 화면 2"></button></div><p class="popup-image-guide">이미지를 누르면 크게 볼 수 있습니다.</p>',
 3:'<h2>STEP 3 · 질문</h2><p>뉴스를 확인하면서 궁금한 내용을 바로 이어서 질문할 수 있습니다.</p>'
 };
 const stepModal=document.querySelector('#step-modal');
