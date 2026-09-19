@@ -28,3 +28,6 @@
 .prompt-card{padding-bottom:20px!important}
 .prompt-card .prompt-box{min-height:285px!important;padding:24px 18px!important;line-height:1.9!important}
 .prompt-card .prompt-tags,.prompt-card .tag,.prompt-card [class*="tag"],.prompt-card .prompt-action{display:none!important}
+
+/* Step 1 real screenshot popup */
+.step-popup-head span{display:inline-block;color:var(--blue);font-size:12px;font-weight:800;letter-spacing:.08em;margin-bottom:7px}.step-popup-head h2{margin:0 0 8px;font-size:27px}.step-popup-head p{margin:0 0 18px;color:var(--muted);line-height:1.65}.step-real-image{display:block;width:100%;border:0;background:#f7faff;padding:10px;border-radius:16px;cursor:zoom-in}.step-real-image img{display:block;width:100%;max-height:58vh;object-fit:contain;border-radius:12px}.popup-image-guide{text-align:center;color:var(--muted);font-size:12px;margin:9px 0 0}
