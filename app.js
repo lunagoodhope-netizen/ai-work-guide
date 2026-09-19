@@ -31,10 +31,10 @@ loadPopupSheet();
 const stepImages={
 1:['info-step1-reservation-01.png.PNG','info-step1-reservation-02.png.PNG'],
 2:['info-step1-reservation-03.png.jpg','info-step1-reservation-04.png.jpg'],
-3:['info-step1-reservation-08.png.jpg'],
-4:['info-step1-reservation-05.png.jpg'],
-5:['info-step1-reservation-06.png.jpg','info-step1-reservation-07.png.jpg'],
-6:['info-step1-reservation-09.png.jpg']
+3:['info-step1-reservation-08.png'],
+4:['info-step1-reservation-05.png'],
+5:['info-step1-reservation-06.png','info-step1-reservation-07.png'],
+6:['info-step1-reservation-09.png']
 };
 function stepPopupHTML(step){
  const imgs=(stepImages[step]||[]).map((src,i)=>'<button class="step-real-image" data-popup-image="'+src+'"><img src="'+src+'" alt="STEP '+step+' 실제 화면 '+(i+1)+'"></button>').join('');
