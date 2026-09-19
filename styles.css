@@ -23,3 +23,8 @@
 .commute-card{overflow:hidden;padding-bottom:0}
 .commute-image-wrap{margin:12px -18px 0;overflow:hidden;border-radius:0 0 17px 17px}
 .commute-image-wrap img{display:block;width:100%;height:410px;object-fit:cover;object-position:center top}
+
+/* prompt card: no tags/buttons, spacious example only */
+.prompt-card{padding-bottom:20px!important}
+.prompt-card .prompt-box{min-height:285px!important;padding:24px 18px!important;line-height:1.9!important}
+.prompt-card .prompt-tags,.prompt-card .tag,.prompt-card [class*="tag"],.prompt-card .prompt-action{display:none!important}
