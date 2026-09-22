@@ -540,6 +540,9 @@ button {
   grid-template-columns: 1fr 1fr;
   gap: 14px;
 }
+.tutor-popup-grid.single {
+  grid-template-columns: 1fr;
+}
 .tutor-popup-grid img {
   display: block;
   width: 100%;
